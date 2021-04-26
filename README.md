@@ -8,8 +8,9 @@ Backend written in [GraphQL](https://graphql.org/) with [Django](https://www.dja
 2. Install the needed packages `pipenv install`.
 3. Generate the migrations and apply them `pipenv run generate && pipenv run migrate`
 4. Run `pipenv run start` to start the server.
-5. Visit http://127.0.0.1:8000/graphql in your browser
-6. Run this example query to make sure it works:
+5. Update `pipfile` with your local ip as well as `settings.py`
+6. Visit http://{local-ip}:8000/graphql in your browser
+7. Run this example query to make sure it works:
 ```
 query {
   allBooks {
@@ -26,4 +27,4 @@ query {
 - [Graphene Documentation](https://docs.graphene-python.org/en/latest/)
 - [Building GraphQL APIs in Django Tutorial](https://www.twilio.com/blog/graphql-apis-django-graphene)
 - [Advanced Usage of Pipenv](https://pipenv-fork.readthedocs.io/en/latest/advanced.html)
-
+- [Linter fixit](https://github.com/Instagram/Fixit)

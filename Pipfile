@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 graphene-django = "*"
+fixit = "*"
+tox = "*"
 
 [dev-packages]
 
@@ -13,6 +15,7 @@ graphene-django = "*"
 python_version = "3.9"
 
 [scripts]
+env = "source env/Scripts/activate"
 generate = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
-start = "python manage.py runserver"
+start = "python manage.py runserver 192.168.0.16:8000"
