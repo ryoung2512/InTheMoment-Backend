@@ -1,7 +1,7 @@
-# Maintain updates for npm packages.
+# Maintain updates for pip packages.
 version: 2
 updates:
-  # Maintain dependencies for npm
+  # Maintain dependencies for pip
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
