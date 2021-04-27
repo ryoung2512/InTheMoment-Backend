@@ -1,0 +1,2 @@
+[flake8]
+exclude = itm_api/itm_api/settings.py

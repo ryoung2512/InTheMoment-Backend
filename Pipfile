@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 graphene-django = "*"
-fixit = "*"
-tox = "*"
+black = "*"
+flake8 = "*"
 
 [dev-packages]
 
@@ -17,5 +17,10 @@ python_version = "3.9"
 [scripts]
 env = "source env/Scripts/activate"
 generate = "python manage.py makemigrations"
+lint = "sh scripts/linting.sh"
+lint-fix = "sh scripts/linting-fix.sh"
 migrate = "python manage.py migrate"
 start = "python manage.py runserver 192.168.0.16:8000"
+
+[pipenv]
+allow_prereleases = true
