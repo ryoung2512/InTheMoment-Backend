@@ -2,7 +2,14 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from environs import Env
+from django.core.management.commands.runserver import Command as runserver; 
 
+env = Env()
+env.read_env()
+
+runserver.default_addr = env.str('LOCAL_IP', default='localhost')
+runserver.default_port = env.str('PORT', default='8000')
 
 def main():
     """Run administrative tasks."""

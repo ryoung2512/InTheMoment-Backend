@@ -8,6 +8,8 @@ django = "*"
 graphene-django = "*"
 black = "*"
 flake8 = "*"
+environs = "*"
+graphene-pynamodb = "*"
 
 [dev-packages]
 
@@ -20,7 +22,7 @@ generate = "python manage.py makemigrations"
 lint = "sh scripts/linting.sh"
 lint-fix = "sh scripts/linting-fix.sh"
 migrate = "python manage.py migrate"
-start = "python manage.py runserver 192.168.0.16:8000"
+start = "python manage.py runserver"
 
 [pipenv]
 allow_prereleases = true
