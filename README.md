@@ -7,7 +7,7 @@ Backend written in [GraphQL](https://graphql.org/) with [Django](https://www.dja
 1. Ensure you have `pipenv` installed. If not, run `pip install pipenv`.
 2. Install the needed packages `pipenv install`.
 3. Generate the migrations and apply them `pipenv run generate && pipenv run migrate`
-4. Rename .env.example to .env and update LOCAL_IP in it with your local ip
+4. Rename `.env.example` in `itm_api` to `.env` and update LOCAL_IP in it with your local ip
 5. Run `pipenv run start` to start the server.
 6. Visit http://{local-ip}:8000/graphql in your browser
 7. Run this example query to make sure it works:
