@@ -10,6 +10,7 @@ black = "*"
 flake8 = "*"
 environs = "*"
 graphene-pynamodb = "*"
+aniso8601 = "*"
 
 [dev-packages]
 
