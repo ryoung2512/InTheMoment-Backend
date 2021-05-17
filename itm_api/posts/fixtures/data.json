@@ -1,56 +1,66 @@
 [
     {
-        "model": "posts.book",
+        "model": "posts.image",
         "pk": 1,
         "fields": {
-            "title": "The One Thing",
-            "author": "",
-            "year_published": 2002,
-            "review": 3
+            "fileurl": "https://i.picsum.photos/id/59/1536/2048.jpg?hmac=JgbeVzH9aw4pZ0_GjwrU4z4TWHnJdkS41P5i0L2towU",
+            "datetime": "05-03-2021 11:50:21",
+            "location": "Yellowstone National Park",
+            "uploaded_by": "user1",
+            "tags": "nature,tree",
+            "thumbnail": "https://picsum.photos/300"
         }
     },
 
     {
-        "model": "posts.book",
+        "model": "posts.image",
         "pk": 2,
         "fields": {
-            "title": "Python Crash Course",
-            "author": "Eric Matthes",
-            "year_published": 2015,
-            "review": 5
+            "fileurl": "https://i.picsum.photos/id/766/1536/2048.jpg?hmac=dYLlAo0TBQkU8TvxVAt0HaRYSpF2Wjny4hPRjJID5q8",
+            "datetime": "05-03-2021 11:50:21",
+            "location": "Home",
+            "uploaded_by": "user2",
+            "tags": "coffee,beans",
+            "thumbnail": "https://picsum.photos/300"
         }
     },
 
     {
-        "model": "posts.book",
+        "model": "posts.image",
         "pk": 3,
         "fields": {
-            "title": "Atomic Habits",
-            "author": "James Clear",
-            "year_published": 2002,
-            "review": 4
+            "fileurl": "https://i.picsum.photos/id/689/1536/2048.jpg?hmac=uQ6N6W7lPgF_YkFXdqIvsRuuW1M0fls4fdMG-IAJx5U",
+            "datetime": "05-03-2021 11:50:21",
+            "location": "Yellowstone National Park",
+            "uploaded_by": "user3",
+            "tags": "ocean,bird",
+            "thumbnail": "https://picsum.photos/300"
         }
     },
 
     {
-        "model": "posts.book",
+        "model": "posts.image",
         "pk": 4,
         "fields": {
-            "title": "The Compound Effect",
-            "author": "Darren Hardy",
-            "year_published": 2010,
-            "review": 3
+            "fileurl": "https://i.picsum.photos/id/1006/1536/2048.jpg?hmac=6GKnYUpvAcjiurJpOpXWxHc1XI2q8ehvnQFCtNSlBB8",
+            "datetime": "05-03-2021 11:50:21",
+            "location": "Yellowstone National Park",
+            "uploaded_by": "user4",
+            "tags": "mountain,hiking,dog",
+            "thumbnail": "https://picsum.photos/300"
         }
     },
 
     {
-        "model": "posts.book",
+        "model": "posts.image",
         "pk": 5,
         "fields": {
-            "title": "Clean Code",
-            "author": "Robert Cecil Martin",
-            "year_published": 2008,
-            "review": 4
+            "fileurl": "https://i.picsum.photos/id/545/1536/2048.jpg?hmac=u4_ZV7BbjLuVgW9P5l0c4ULm3sViYgkdMM-rFlJTTVM",
+            "datetime": "05-03-2021 11:50:21",
+            "location": "Yellowstone National Park",
+            "uploaded_by": "user5",
+            "tags": "stone,bridge,architecture",
+            "thumbnail": "https://picsum.photos/300"
         }
     }
 ]

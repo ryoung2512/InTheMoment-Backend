@@ -16,6 +16,20 @@ from pathlib import Path
 env = Env()
 env.read_env()
 
+# AWS Settings
+AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME")
+AWS_S3_ENDPOINT_URL = env.str("AWS_S3_ENDPOINT_URL")
+
+S3DIRECT_DESTINATIONS = {
+    'primary_destination': {
+        'key': env.str("AWS_S3_FOLDER"),
+        'allowed': ['image/jpg', 'image/jpeg', 'image/png', 'video/mp4'],
+    },
+}
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +44,7 @@ SECRET_KEY = "django-insecure-8tq1vi&*hcn-*6%q7+*sym_wy5^2wy$exu@*4#nbaev8$7=knq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = [env.str("LOCAL_IP", default="localhost")]
+ALLOWED_HOSTS = [env.str("LOCAL_IP", default="localhost"), "itm-1.cluster-ci57ngnb6zo5.us-east-1.rds.amazonaws.com", "172.31.4.62"]
 
 # Application definition
 
@@ -80,9 +94,13 @@ WSGI_APPLICATION = "itm_api.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'itmdb', # dbname
+        'USER': 'postgres', # master username
+        'PASSWORD': 'VdPQ53XIgLSfI84fE8ds', # master password
+        'HOST': 'itm-db-dev.ci57ngnb6zo5.us-east-1.rds.amazonaws.com', # Endpoint
+        'PORT': '5432',
     }
 }
 
