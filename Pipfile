@@ -11,11 +11,14 @@ flake8 = "*"
 environs = "*"
 graphene-pynamodb = "*"
 aniso8601 = "*"
+psycopg2 = "*"
+django-s3direct = "*"
+zappa = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.8"
 
 [scripts]
 env = "source env/Scripts/activate"

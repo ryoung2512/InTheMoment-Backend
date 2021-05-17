@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "django_settings": "itm_api.itm_api.settings",
+        "profile_name": "default",
+        "project_name": "inthemoment-backend",
+        "runtime": "python3.8",
+        "s3_bucket": "itmimages",
+        "aws_region": "us-east-1"
+    }
+}
