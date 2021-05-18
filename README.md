@@ -4,13 +4,14 @@ Backend written in [GraphQL](https://graphql.org/) with [Django](https://www.dja
 
 ## Installation
 **Note:** These commands currently assume you are running them in the root of the directory. Assume they only work there!
-1. Ensure you have `pipenv` installed. If not, run `pip install pipenv`.
-2. Install the needed packages `pipenv install`.
-3. Generate the migrations and apply them `pipenv run generate && pipenv run migrate`
-4. Rename `.env.example` in `itm_api` to `.env` and update LOCAL_IP in it with your local ip
-5. Run `pipenv run start` to start the server.
-6. Visit http://{local-ip}:8000/graphql in your browser
-7. Run this example query to make sure it works:
+1. Install [python 3.8](https://www.python.org/downloads/release/python-380/)
+2. Ensure you have `pipenv` installed. If not, run `pip install pipenv`.
+3. Install the needed packages `pipenv install`.
+4. Generate the migrations and apply them `pipenv run generate && pipenv run migrate`
+5. Rename `.env.example` in `itm_api` to `.env` and update LOCAL_IP in it with your local ip
+6. Run `pipenv run start` to start the server.
+7. Visit http://{local-ip}:8000/graphql in your browser
+8. Run this example query to make sure it works:
 ```
 query {
   allBooks {
