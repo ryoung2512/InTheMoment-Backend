@@ -13,12 +13,38 @@ Backend written in [GraphQL](https://graphql.org/) with [Django](https://www.dja
 7. Run this example query to make sure it works:
 ```
 query {
-  allBooks {
+  allImages{
     id
     title
+    fileurl
+    datetime
+    location
     author
-    yearPublished
-    review
+    tags
+    thumbnail
+    video
+  }
+}
+}
+```
+
+## Queries
+Query for adding image to DB:
+```
+mutation {
+  createImage(
+    imageData:{
+      fileurl:"",
+      title:"A post",
+      datetime:"",
+      location:"",
+      author:"",
+      tags:"",
+      thumbnail:"",
+      video:false
+  	}
+  ) {
+    image {id, fileurl}
   }
 }
 ```
