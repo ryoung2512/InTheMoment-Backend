@@ -16,21 +16,6 @@ from pathlib import Path
 env = Env()
 env.read_env()
 
-# AWS Settings
-AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME")
-AWS_S3_ENDPOINT_URL = env.str("AWS_S3_ENDPOINT_URL")
-
-S3DIRECT_DESTINATIONS = {
-    'primary_destination': {
-        'key': env.str("AWS_S3_FOLDER"),
-        'allowed': ['image/jpg', 'image/jpeg', 'image/png', 'video/mp4'],
-    },
-}
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

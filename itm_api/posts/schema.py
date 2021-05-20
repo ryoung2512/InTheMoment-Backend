@@ -1,7 +1,12 @@
 import graphene
+import os
 
 from graphene_django import DjangoObjectType  # , DjangoListField
 from .models import Image
+from .aws import s3, bucket, get_s3_client, get_presigned_url, upload_file_to_bucket
+from io import BytesIO
+
+module_dir = os.path.dirname(__file__)  # get current directory
 
 
 class ImageType(DjangoObjectType):
@@ -23,29 +28,44 @@ class Query(graphene.ObjectType):
 
 class ImageInput(graphene.InputObjectType):
     id = graphene.ID()
-    filename = graphene.String()
+    fileurl = graphene.String()
+    title = graphene.String()
     datetime = graphene.String()
     location = graphene.String()
-    uploaded_by = graphene.String()
+    author = graphene.String()
     tags = graphene.String()
     thumbnail = graphene.String()
+    video = graphene.Boolean()
 
 
 class CreateImage(graphene.Mutation):
     class Arguments:
         image_data = ImageInput(required=True)
 
-    img = graphene.Field(ImageType)
+    image = graphene.Field(ImageType)
 
     @staticmethod
     def mutate(root, info, image_data=None):
+        response = get_presigned_url("2048.jpg")
+        print(response)
+        filename_to_upload = '2048.jpg'
+        file_path = os.path.join(module_dir, filename_to_upload)
+
+        upload_response = upload_file_to_bucket(file_path, response)
+
+        file_url = get_s3_client().generate_presigned_url('put_object', ExpiresIn=60000, Params={'Bucket': "itmimages", 'Key': filename_to_upload})
+
+        print(f"Upload response: {upload_response.status_code}")
+
         image_instance = Image(
-            fileurl = image_data.fileurl,
+            fileurl = file_url,
+            title = image_data.title,
             datetime = image_data.datetime,
             location = image_data.location,
-            uploaded_by = image_data.uploaded_by,
+            author = image_data.author,
             tags = image_data.tags,
             thumbnail = image_data.thumbnail,
+            video = image_data.video,
         )
         image_instance.save()
         return CreateImage(image=image_instance)
@@ -55,7 +75,7 @@ class UpdateImage(graphene.Mutation):
     class Arguments:
         image_data = ImageInput(required=True)
 
-    img = graphene.Field(ImageType)
+    image = graphene.Field(ImageType)
 
     @staticmethod
     def mutate(root, info, image_data=None):
@@ -64,11 +84,13 @@ class UpdateImage(graphene.Mutation):
 
         if image_instance:
             image_instance.fileurl = image_data.fileurl
+            image_instance.title = image_data.title
             image_instance.datetime = image_data.datetime
             image_instance.location = image_data.location
-            image_instance.uploaded_by = image_data.uploaded_by
+            image_instance.author = image_data.author
             image_instance.tags = image_data.tags
             image_instance.thumbnail = image_data.thumbnail
+            image_instance.video = image_data.video
             image_instance.save()
 
             return UpdateImage(image=image_instance)
