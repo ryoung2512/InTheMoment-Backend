@@ -29,3 +29,6 @@ query {
 - [Building GraphQL APIs in Django Tutorial](https://www.twilio.com/blog/graphql-apis-django-graphene)
 - [Advanced Usage of Pipenv](https://pipenv-fork.readthedocs.io/en/latest/advanced.html)
 - [Linter fixit](https://github.com/Instagram/Fixit)
+
+
+testing codeowners -ignore
