@@ -1,10 +1,7 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
   "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "rules": "config/firestore/firestore.rules",
+    "indexes": "config/firestore/firestore.indexes.json"
   },
   "functions": {
     "predeploy": [
@@ -13,7 +10,7 @@
     ]
   },
   "storage": {
-    "rules": "storage.rules"
+    "rules": "config/storage/storage.rules"
   },
   "emulators": {
     "auth": {
@@ -25,12 +22,6 @@
     "firestore": {
       "port": 8080
     },
-    "database": {
-      "port": 9000
-    },
-    "pubsub": {
-      "port": 8085
-    },
     "storage": {
       "port": 9199
     },
@@ -39,6 +30,6 @@
     }
   },
   "remoteconfig": {
-    "template": "remoteconfig.template.json"
+    "template": "config/remoteconfig.template.json"
   }
 }
