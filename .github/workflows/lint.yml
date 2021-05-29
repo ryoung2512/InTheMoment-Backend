@@ -11,26 +11,14 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          python-version: "3.8"
+          node-version: '14'
 
-      - name: Install pipenv
-        run: |
-          python -m pip install --upgrade pipenv wheel
+      - name: Install Node.js dependencies
+        run: npm ci
 
-      - id: cache-pipenv
-        uses: actions/cache@v1
-        with:
-          path: ~/.local/share/virtualenvs
-          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
-
-      - name: Install dependencies
-        if: steps.cache-pipenv.outputs.cache-hit != 'true'
-        run: |
-          pipenv install
-
-      - name: Run linter
-        run: |
-          pipenv run lint
+      # this will need some editing, should be running linter on functions dir
+      - name: Run Linter
+        run: npx eslint . --ext .ts --ext .tsx

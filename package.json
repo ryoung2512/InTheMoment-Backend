@@ -1,0 +1,11 @@
+{
+  "name": "inthemoment-backend",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "firebase emulators:start --import=emulator_data --export-on-exit"
+  },
+  "dependencies": {
+    "firebase-tools": "^9.12.0"
+  },
+  "private": true
+}

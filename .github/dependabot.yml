@@ -1,8 +1,12 @@
-# Maintain updates for pip packages.
+# Maintain updates for npm packages.
 version: 2
 updates:
-  # Maintain dependencies for pip
-  - package-ecosystem: "pip"
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "functions/"
+    schedule:
+      interval: "daily"      
