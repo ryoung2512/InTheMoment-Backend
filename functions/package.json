@@ -1,7 +1,8 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint . --ext .js --ext .ts",
+    "lint-fix": "eslint . --ext .js --ext .ts . --fix",
     "build": "tsc",
     "login": "firebase login",
     "serve": "npm run build && npm run login && firebase emulators:start --only functions",

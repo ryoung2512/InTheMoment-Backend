@@ -5,11 +5,11 @@ const db = require("firebase-admin");
 // 2. Click Generate New Private Key, then confirm by clicking Generate Key.
 // 3. Store the JSON file in the `functions/resources/` directory
 
-var serviceAccount = require("../../../resources/inthemoment-key.json");
+const serviceAccount = require("../../../resources/inthemoment-key.json");
 
 db.initializeApp({
   credential: db.credential.cert(serviceAccount),
-  databaseURL: "https://inthemoment-4e008-default-rtdb.firebaseio.com"
+  databaseURL: "https://inthemoment-4e008-default-rtdb.firebaseio.com",
 });
 
 export default db;

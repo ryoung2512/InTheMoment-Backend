@@ -1,5 +1,5 @@
-import {https} from 'firebase-functions';
-import gqlServer from './graphql/server';
+import {https} from "firebase-functions";
+import gqlServer from "./graphql/server";
 
 const server = gqlServer();
 
